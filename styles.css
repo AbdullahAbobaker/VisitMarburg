@@ -216,6 +216,7 @@ section .heading .subtitle {
 
 .about .items .item, .about .items .image  {
     position: relative;
+    
     display: inline-block; /* Ensure container wraps around image */
     overflow: hidden; /* Hide overflow to prevent scaling issues */
   }
@@ -234,6 +235,7 @@ section .heading .subtitle {
 
  .about .items .image:hover img{
     transform: scale(1.1); /* Scale up image on hover */
+
   }
   
  .about .item-content{
