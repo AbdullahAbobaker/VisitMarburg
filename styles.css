@@ -362,7 +362,7 @@ section .heading .subtitle {
 
 
 .next .card .content-card h4 {
-    font-size: 42px;
+    font-size: 37px;
     font-family: 'Roboto';
     text-transform: capitalize;
     font-weight: 500;
@@ -555,7 +555,7 @@ section .heading .subtitle {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 10px;
+    border-radius: 15px;
 }
 .thumbnail .item.active{
     filter: brightness(1.5);
@@ -567,6 +567,10 @@ section .heading .subtitle {
 .thumbnail .icon{
     font-size: 7rem;
 
+}
+.thumbnail .\.icon-moon{
+    color: #f35305;
+    margin-left: 1rem;
 }
 @media screen and (max-width: 678px) {
     .thumbnail{
