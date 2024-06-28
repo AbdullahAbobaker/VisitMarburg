@@ -100,6 +100,16 @@ function showSlider() {
         next.click();
     }, 7000);
 }
+addEventListener("DOMContentLoaded", (event) => {
+    document.querySelector('.slider').style.display = 'none';
+});
+
+// click button read
+document.querySelectorAll('.btn-read').forEach(button => {
+    button.addEventListener('click', () => {
+        document.querySelector('.slider').style.display = 'block';
+    });
+});
 
 document.querySelectorAll('.btn-read').forEach(button => {
     button.addEventListener('click', () => {
