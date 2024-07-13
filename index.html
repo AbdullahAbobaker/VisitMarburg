@@ -1,389 +1,429 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Visit Marburg</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Visit Marburg</title>
 
-    <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://kit.fontawesome.com/c5d70d7fb0.js"
-      crossorigin="anonymous"
-    ></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
-    />
-    <link rel="stylesheet" href="normalize.css" />
-    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <link rel="stylesheet" href="normalize.css" />
-    <script>
-      $(document).ready(function () {
-        var lastScrollTop = 0;
-        var delta = 5;
-        var navbarHeight = $(".nav-bar").outerHeight();
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://kit.fontawesome.com/c5d70d7fb0.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css" />
+  <link rel="stylesheet" href="normalize.css" />
+  <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="normalize.css" />
+  <script>
+    $(document).ready(function () {
+      var lastScrollTop = 0;
+      var delta = 5;
+      var navbarHeight = $(".nav-bar").outerHeight();
 
-        $(window).scroll(function (event) {
-          var st = $(this).scrollTop();
-
-          // Scroll down
-          if (st > lastScrollTop && st > navbarHeight) {
-            // Scroll down to hide the navbar
-            $(".nav-bar").addClass("hidden");
-          } else {
-            // Scroll up to show the navbar
-            if (st + $(window).height() < $(document).height()) {
-              $(".nav-bar").removeClass("hidden");
-            }
+      $(window).scroll(function (event) {
+        var st = $(this).scrollTop();
+        if (st > lastScrollTop && st > navbarHeight) {
+          $(".nav-bar").addClass("hidden");
+        } else {
+          if (st + $(window).height() < $(document).height()) {
+            $(".nav-bar").removeClass("hidden");
           }
-
-          lastScrollTop = st;
-        });
+        }
+        lastScrollTop = st;
       });
-    </script>
-  </head>
-  <body>
-    <nav class="nav-bar">
-      <div class="content">
-        <div class="site-logo">
-          <a href="#" class="logo-link">Visit Marburg</a>
-        </div>
-        <ul class="navigation">
-          <li class="link"><a href="#home">Home</a></li>
-          <li class="link"><a href="/Team/team.html">Team</a></li>
-          <li class="link">
-            <a href="ContactFrom/contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    });
+  </script>
+</head>
+<body>
+<nav class="nav-bar">
+  <div class="content">
+    <div class="site-logo">
+      <a href="#" class="logo-link">Visit Marburg</a>
+    </div>
+    <ul class="navigation">
+      <li class="link"><a href="#home">Home</a></li>
+      <li class="link"><a href="/Team/team.html">Team</a></li>
+      <li class="link">
+        <a href="ContactFrom/contact.html">Contact</a>
+      </li>
+    </ul>
+  </div>
+</nav>
 
-    <header class="home" id="home">
-      <div class="content">
-        <h1>
-          Discover the charm of <strong>Marburg</strong>, a picturesque town in
-          central Germany.
-        </h1>
-        <h4>Explore Marburg through bite-sized experiences</h4>
-        <button class="btn-explore" onclick="scrollToSection('about')">
-          Explore more <i class="ri-arrow-right-line"></i>
-        </button>
-      </div>
-    </header>
+<header class="home" id="home">
+  <div class="content">
+    <h1>
+      Discover the charm of <strong>Marburg</strong>, a picturesque town in
+      central Germany.
+    </h1>
+    <h4>Explore Marburg through bite-sized experiences</h4>
+    <button class="btn-explore" onclick="scrollToSection('about')">
+      Explore more <i class="ri-arrow-right-line"></i>
+    </button>
+  </div>
+</header>
 
-    <section class="about" id="about">
-      <div class="content">
-        <div class="items">
-          <div class="image">
-            <img src="assets/Marburg/Landscape/1.jpg" alt="" srcset="" />
-          </div>
-          <div class="item">
-            <div class="item-content">
-              <h2 class="about-title">About Marburg</h2>
-              <div class="about-desc">
-                <p>
-                  Experience the essence of historical charm in Marburg,
-                  Germany. Immerse yourself in its medieval streets, savor the
-                  flavors of local cuisine, and delve into the vibrant academic
-                  and cultural scene that defines this picturesque town.
-                </p>
-                <p>
-                  Discover Marburg's rich heritage through its architecture,
-                  museums, and the welcoming atmosphere of its renowned
-                  university.
-                </p>
-              </div>
-            </div>
-            <div class="item-data">
-              <div class="col">
-                <h1>76,000</h1>
-                <span>population</span>
-              </div>
-              <div class="col">
-                <h1>Germany</h1>
-                <span>Country</span>
-              </div>
-              <div class="col">
-                <h1>Hesse</h1>
-                <span>State</span>
-              </div>
-            </div>
+<section class="about" id="about">
+  <div class="content">
+    <div class="items">
+      <div class="image">
+        <img src="assets/Marburg/Landscape/1.jpg" alt="" srcset="" />
+      </div>
+      <div class="item">
+        <div class="item-content">
+          <h2 class="about-title">About Marburg</h2>
+          <div class="about-desc">
+            <p>
+              Experience the essence of historical charm in Marburg,
+              Germany. Immerse yourself in its medieval streets, savor the
+              flavors of local cuisine, and delve into the vibrant academic
+              and cultural scene that defines this picturesque town.
+            </p>
+            <p>
+              Discover Marburg's rich heritage through its architecture,
+              museums, and the welcoming atmosphere of its renowned
+              university.
+            </p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="next" id="next2">
-      <div class="heading">
-        <h1 class="title">
-          discover the most attracative attractions & landmarks
-        </h1>
-        <p class="subtitle">Explore the city</p>
-      </div>
-      <div class="content">
-        <div class="items">
-          <div class="card">
-            <div class="image">
-              <img src="/assets/Marburg/Oberstadt.jpg" alt="" srcset="" />
-            </div>
-            <div class="content-card">
-              <h4>Oberstadt</h4>
-              <p>
-                Marburg Oberstadt, a charming blend of history and architecture.
-                Wander through its medieval lanes and timeless beauty!
-              </p>
-              <button class="btn-read" data-country="USA">Explore</button>
-            </div>
+        <div class="item-data">
+          <div class="col">
+            <h1>76,000</h1>
+            <span>population</span>
           </div>
-
-          <div class="card">
-            <div class="image">
-              <img
-                src="/assets/Marburg/Spiegelslustturm.jpg"
-                alt=""
-                srcset=""
-              />
-            </div>
-            <div class="content-card">
-              <h4>Spiegelslustturm</h4>
-              <p>
-                Marburg Spiegelslust, an enchanting fusion of elegance and
-                nature. Discover its serene gardens and captivating allure!
-              </p>
-              <button class="btn-read" data-country="Brazil">Explore</button>
-            </div>
+          <div class="col">
+            <h1>Germany</h1>
+            <span>Country</span>
           </div>
-
-          <div class="card">
-            <div class="image">
-              <img src="/assets/Marburg/Schloss.jpg" alt="" srcset="" />
-            </div>
-            <div class="content-card">
-              <h4>Schloss</h4>
-              <p>
-                Marburg Castle, steeped in history and nestled in picturesque
-                surroundings. Delve into its ancient walls and storied past!
-              </p>
-              <div>
-                <button class="btn-read" data-country="Italy">Explore</button>
-              </div>
-            </div>
+          <div class="col">
+            <h1>Hesse</h1>
+            <span>State</span>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <div class="slider">
-        <!-- Oberstadt Section -->
-        <div class="list" id="USA" style="display: none">
-          <div class="item active">
-            <img src="assets/Marburg/Oberstadt.jpg" />
-            <div class="content">
-              <h2>Oberstadt</h2>
-              <p>
-                Explore the charming streets and historic architecture of
-                Marburg's Oberstadt. Discover hidden gems, cozy cafes, and the
-                rich history that makes this town unique.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/Marburg/Oberstadt.jpg" />
-            <div class="content">
-              <h2>Cafe & Restaurants</h2>
-              <p>
-                Marburg's cafes and restaurants offer a delightful blend of
-                traditional German cuisine and modern culinary innovations.
-                Enjoy a relaxing meal in this picturesque town.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/Marburg/Oberstadt.jpg" />
-            <div class="content">
-              <h2>Nightview</h2>
-              <p>
-                Experience the vibrant nightlife of Marburg. From cozy pubs to
-                lively bars, the town offers a variety of evening entertainment
-                to suit every taste.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="assets/Marburg/Oberstadt.jpg" />
-            <div class="content">
-              <h2>Sightseeing</h2>
-              <p>
-                Capture the essence of Marburg through your lens. From scenic
-                landscapes to historic sites, every corner of this town is a
-                photographer's dream.
-              </p>
-            </div>
-          </div>
+<section class="next" id="next2">
+  <div class="heading">
+    <h1 class="title">
+      discover the most attractive attractions & landmarks
+    </h1>
+    <p class="subtitle">Explore the city</p>
+  </div>
+  <div class="content">
+    <div class="items">
+      <div class="card">
+        <div class="image">
+          <img src="/assets/Marburg/Oberstadt.jpg" alt="" srcset="" />
         </div>
-
-        <!-- Schloss Section -->
-        <div class="list" id="Italy" style="display: none">
-          <div class="item active">
-            <img src="/assets/Marburg/Schloss.jpg" />
-            <div class="content">
-              <h2>Schloss</h2>
-              <p>
-                Immerse yourself in the rich history, art, and culture of
-                Marburg.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="/assets/Marburg/Schloss.jpg" />
-            <div class="content">
-              <h2>Cafe & Restaurants</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deserunt, illum!.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="/assets/Marburg/Schloss.jpg" />
-            <div class="content">
-              <h2>Nightview</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Explicabo, sequi..
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="/assets/Marburg/Schloss.jpg" />
-            <div class="content">
-              <h2>Photos</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Reiciendis, dolorem?.
-              </p>
-            </div>
-          </div>
+        <div class="content-card">
+          <h4>Oberstadt</h4>
+          <p>
+            Marburg Oberstadt, a charming blend of history and architecture.
+            Wander through its medieval lanes and timeless beauty!
+          </p>
+          <button class="btn-read" data-country="USA">Explore</button>
         </div>
+      </div>
 
-        <!-- Spiegelslustturm Section -->
-        <div class="list" id="Brazil" style="display: none">
-          <div class="item active">
-            <img src="/assets/Marburg/Spiegelslustturm.jpg" />
-            <div class="content">
-              <h2>Spiegelslustturm</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
-                quasi?.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="/assets/Marburg/Spiegelslustturm.jpg" />
-            <div class="content">
-              <h2>Cafe & Restaurants</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quibusdam, earum!.
-              </p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="/assets/Marburg/Spiegelslustturm.jpg" />
-            <div class="content">
-              <h2>Nightview</h2>
-              <p>.</p>
-            </div>
-          </div>
-          <div class="item">
-            <img src="/assets/Marburg/Spiegelslustturm.jpg" />
-            <div class="content">
-              <h2>Photos</h2>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Cupiditate, ipsam..
-              </p>
-            </div>
-          </div>
+      <div class="card">
+        <div class="image">
+          <img
+                  src="/assets/Marburg/Spiegelslustturm.jpg"
+                  alt=""
+                  srcset=""
+          />
         </div>
-
-        <!-- Button arrows -->
-        <div class="arrows">
-          <button id="prev"><</button>
-          <button id="next">></button>
+        <div class="content-card">
+          <h4>Spiegelslustturm</h4>
+          <p>
+            Marburg Spiegelslust, an enchanting fusion of elegance and
+            nature. Discover its serene gardens and captivating allure!
+          </p>
+          <button class="btn-read" data-country="Brazil">Explore</button>
         </div>
+      </div>
 
-        <!-- thumbnail -->
-        <div class="thumbnail">
-          <div class="item active">
+      <div class="card">
+        <div class="image">
+          <img src="/assets/Marburg/Schloss.jpg" alt="" srcset="" />
+        </div>
+        <div class="content-card">
+          <h4>Schloss</h4>
+          <p>
+            Marburg Castle, steeped in history and nestled in picturesque
+            surroundings. Delve into its ancient walls and storied past!
+          </p>
+          <button class="btn-read" data-country="Italy">Explore</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="slider">
+    <!-- Oberstadt Section -->
+    <div class="list" id="USA" style="display: none">
+      <div class="item active">
+        <img src="assets/Marburg/Oberstadt.jpg" />
+        <div class="content">
+          <h2>Oberstadt</h2>
+          <p>
+            Explore the charming streets and historic architecture of
+            Marburg's Oberstadt. Discover hidden gems, cozy cafes, and the
+            rich history that makes this town unique.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/Marburg/Oberstadt.jpg" />
+        <div class="content">
+          <h2>Cafe & Restaurants</h2>
+          <p>
+            Marburg's cafes and restaurants offer a delightful blend of
+            traditional German cuisine and modern culinary innovations.
+            Enjoy a relaxing meal in this picturesque town.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/Marburg/Oberstadt.jpg" />
+        <div class="content">
+          <h2>Nightview</h2>
+          <p>
+            Experience the vibrant nightlife of Marburg. From cozy pubs to
+            lively bars, the town offers a variety of evening entertainment
+            to suit every taste.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/Marburg/Oberstadt.jpg" />
+        <div class="content">
+          <h2>Sightseeing</h2>
+          <span class="icon .icon-moon"></span>
+          <p>
+            Capture the essence of Marburg through your lens. From scenic
+            landscapes to historic sites, every corner of this town is a
+            photographer's dream.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Schloss Section -->
+    <div class="list" id="Italy" style="display: none">
+      <div class="item active">
+        <img src="/assets/Marburg/Schloss.jpg" />
+        <div class="content">
+          <h2>Schloss</h2>
+          <p>
+            Immerse yourself in the rich history, art, and culture of
+            Marburg.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/Marburg/Schloss.jpg" />
+        <div class="content">
+          <h2>Cafe & Restaurants</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Deserunt, illum!.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/Marburg/Schloss.jpg" />
+        <div class="content">
+          <h2>Nightview</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Explicabo, sequi..
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/Marburg/Schloss.jpg" />
+        <div class="content">
+          <h2>Photos</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Reiciendis, dolorem?.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Spiegelslustturm Section -->
+    <div class="list" id="Brazil" style="display: none">
+      <div class="item active">
+        <img src="/assets/Marburg/Spiegelslustturm.jpg" />
+        <div class="content">
+          <h2>Spiegelslustturm</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque,
+            quasi?.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/Marburg/Spiegelslustturm.jpg" />
+        <div class="content">
+          <h2>Cafe & Restaurants</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Quibusdam, earum!.
+          </p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/Marburg/Spiegelslustturm.jpg" />
+        <div class="content">
+          <h2>Nightview</h2>
+          <p>.</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="/assets/Marburg/Spiegelslustturm.jpg" />
+        <div class="content">
+          <h2>Photos</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Cupiditate, ipsam..
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Button arrows -->
+    <div class="arrows">
+      <button id="prev"><</button>
+      <button id="next">></button>
+    </div>
+
+    <!-- thumbnail -->
+    <div class="thumbnail">
+      <div class="item active">
             <span class="icon">
               <i class="fa-brands fa-wpexplorer"></i>
             </span>
-
-            <div class="content"></div>
-          </div>
-          <div class="item">
+        <div class="content"></div>
+      </div>
+      <div class="item">
             <span class="icon">
               <i class="fa-solid fa-mug-saucer"></i>
             </span>
-            <div class="content"></div>
-          </div>
-          <div class="item">
+        <div class="content"></div>
+      </div>
+      <div class="item">
             <span class="icon .icon-moon">
               <i class="fa-solid fa-moon"></i>
             </span>
-            <div class="content"></div>
-          </div>
-          <div class="item">
+        <div class="content"></div>
+      </div>
+      <div class="item">
             <span class="icon">
               <i class="fa-solid fa-mountain-sun"></i>
             </span>
-            <div class="content"></div>
-          </div>
+        <div class="content"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h1>Hello World</h1>
+</section>
+
+<!-- New Section: Famous Characters in Marburg -->
+<section class="famous-characters" id="famous-characters">
+  <div class="heading">
+    <h1 class="title">Famous Characters in Marburg</h1>
+    <p class="subtitle">Discover the notable personalities from Marburg</p>
+  </div>
+  <div class="content">
+    <div class="items">
+      <div class="card">
+        <div class="image">
+          <img src="assets/Marburg/Charachters/brothers-grimm-5233461_1920.png" alt="Character 1" />
+        </div>
+        <div class="content-card">
+          <h4>Brothers Grimm</h4>
+          <p>The Brothers Grimm, Jacob and Wilhelm, were German scholars known for "Grimm's Fairy Tales," which includes "Cinderella" and "Snow White." Their work preserved traditional folktales and influenced modern storytelling.</p>
+          <button class="btn-read">Learn More</button>
         </div>
       </div>
-    </section>
+      <div class="card">
+        <div class="image">
+          <img src="assets/characters/character2.jpg" alt="Character 2" />
+        </div>
+        <div class="content-card">
+          <h4>Character 2</h4>
+          <p>Short description about Character 2.</p>
+          <button class="btn-read">Learn More</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="assets/characters/character3.jpg" alt="Character 3" />
+        </div>
+        <div class="content-card">
+          <h4>Character 3</h4>
+          <p>Short description about Character 3.</p>
+          <button class="btn-read">Learn More</button>
+        </div>
+      </div>
+      <div class="card">
+        <div class="image">
+          <img src="assets/characters/character4.jpg" alt="Character 4" />
+        </div>
+        <div class="content-card">
+          <h4>Character 4</h4>
+          <p>Short description about Character 4.</p>
+          <button class="btn-read">Learn More</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section>
-      <h1>Hello World</h1>
-    </section>
-
-    <footer class="footer" id="contact">
-      <div class="content">
-        <h4>Bite-sized Experiences</h4>
-        <div class="social">
+<footer class="footer" id="contact">
+  <div class="content">
+    <h4>Bite-sized Experiences</h4>
+    <div class="social">
           <span>
             <a href="#f"><i class="ri-facebook-fill"></i></a>
           </span>
-          <span>
+      <span>
             <a href="#f"><i class="ri-instagram-fill"></i></a>
           </span>
-          <span>
+      <span>
             <a href="#f"><i class="ri-twitter-fill"></i></a>
           </span>
-          <span>
-            <a href="#f"><i class="ri-linkedin-fill"></i></a>
+      <span>
+            <a href="#f"><i class="ri-linkedin-fill"></i
+            </a>
           </span>
-          <span>
+      <span>
             <a href="#f"><i class="ri-youtube-fill"></i></a>
           </span>
-        </div>
-        <p>
-          <i class="ri-double-quotes-l"></i>
-          Experience the world in small, unforgettable moments.
-          <i class="ri-double-quotes-r"></i>
-        </p>
-        <p></p>
-        <ul class="navigation">
-          <li class="link"><a href="#home">home</a></li>
-          <li class="link"><a href="#about">about us</a></li>
-          <li class="link"><a href="#contact">contact</a></li>
-        </ul>
-      </div>
-    </footer>
+    </div>
+    <p>
+      <i class="ri-double-quotes-l"></i>
+      Experience the world in small, unforgettable moments.
+      <i class="ri-double-quotes-r"></i>
+    </p>
+    <p></p>
+    <ul class="navigation">
+      <li class="link"><a href="#home">home</a></li>
+      <li class="link"><a href="#about">about us</a></li>
+      <li class="link"><a href="#contact">contact</a></li>
+    </ul>
+  </div>
+</footer>
 
-    <script src="script.js"></script>
-  </body>
+<script src="script.js"></script>
+</body>
 </html>
