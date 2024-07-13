@@ -10,6 +10,7 @@ function scrollToSection(sectionId) {
 window.onscroll = function () {
     scrollFunction();
 }
+
 function scrollFunction() {
     if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
         navbar.classList.add('active');
@@ -78,11 +79,6 @@ let thumbnails = document.querySelectorAll('.thumbnail .item');
 let countItem = items.length;
 let itemActive = 0;
 
-// auto run slider
-let refreshInterval = setInterval(() => {
-    next.click();
-}, 7000)
-
 function showSlider() {
     // remove item active old
     let itemActiveOld = document.querySelector('.slider .list .item.active');
@@ -93,13 +89,8 @@ function showSlider() {
     // active new item
     items[itemActive].classList.add('active');
     thumbnails[itemActive].classList.add('active');
-
-    // clear auto time run slider
-    clearInterval(refreshInterval);
-    refreshInterval = setInterval(() => {
-        next.click();
-    }, 7000);
 }
+
 addEventListener("DOMContentLoaded", (event) => {
     document.querySelector('.slider').style.display = 'none';
 });
@@ -151,4 +142,3 @@ prev.addEventListener('click', () => {
     itemActive = (itemActive - 1 + countItem) % countItem;
     showSlider();
 });
-

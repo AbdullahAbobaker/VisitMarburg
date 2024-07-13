@@ -449,6 +449,17 @@ section .heading .subtitle {
     font-size: 100px;
     margin: 0;
 }
+section .slider .list .item .content iframe {
+    position: absolute;
+    inset: 0 0 0 0;
+    object-fit: cover;
+    top: -40px;
+    left: 600px;
+    width: 130%;
+    height: 150%;
+    border: none;
+    z-index: 1;
+}
 
 .slider .list .item.active {
     opacity: 1;
