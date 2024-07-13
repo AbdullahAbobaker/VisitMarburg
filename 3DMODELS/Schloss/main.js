@@ -27,8 +27,9 @@ let objToRender = 'eye';
 // Instantiate a loader for the .gltf file
 const loader = new GLTFLoader();
 
+// Load the file
 loader.load(
-  `models/${objToRender}/Hauptbahnhof.glb`,
+  `models/${objToRender}/Landgrafenschloss.glb`,
   function (gltf) {
     // If the file is loaded, add it to the scene
     object = gltf.scene;
@@ -43,6 +44,7 @@ loader.load(
     console.error(error);
   }
 );
+
 
 // Instantiate a new renderer and set its size
 const renderer = new THREE.WebGLRenderer({ alpha: true }); // Alpha: true allows for the transparent background
