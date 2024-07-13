@@ -28,7 +28,7 @@ let objToRender = 'eye';
 const loader = new GLTFLoader();
 
 loader.load(
-  `models/${objToRender}/Spiegelslustturm.glb`,
+  `models/${objToRender}/E-Kirche.glb`,
   function (gltf) {
     // If the file is loaded, add it to the scene
     object = gltf.scene;
