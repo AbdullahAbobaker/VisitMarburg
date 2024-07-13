@@ -420,6 +420,7 @@ section .heading .subtitle {
     object-fit: cover;
 }
 
+
 .slider .list .item::after {
     content: '';
     width: 100%;
