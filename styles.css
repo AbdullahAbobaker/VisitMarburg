@@ -730,6 +730,17 @@ footer .content p {
 .famous-characters .card .image {
     width: 100%;
     height: 250px;
+    filter: brightness(0) invert(1);
+    /* Optional: Adjust contrast to your liking */
+contrast(1.2);
+    /* Optional: Add other filters as needed */
+    transition: transform 0.3s, filter 0.3s;
+}
+
+.famous-characters .card:hover .image img {
+    transform: scale(1.1);
+    /* Apply the same filter on hover for consistency */
+    filter: brightness(0) invert(1) contrast(1.2);
     overflow: hidden;
     position: relative;
 }
