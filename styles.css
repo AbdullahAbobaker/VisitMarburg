@@ -199,7 +199,40 @@ section .heading .subtitle {
     font-weight: 300;
     color: #eee;
 }
+#blinds{
+    text-align: center;
+    font-style: italic;
+    font-weight: 3rem;
+}
+.blinds-div{
+    max-width: 1140px;
+    margin: 0 auto;
+}
+.blinds-div img{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  
+}
+.blind-image-container {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    max-height: 400px;
+    overflow: hidden;
+  }
+  .blind-link{
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 300;
+    color: #eee;
+    padding: 0.8rem 2.4rem;
+    width: fit-content;
+    background-color: transparent;
+    border: 1.6px solid #eee;
+    cursor: pointer;
+    transition: all 1s ease-in;
 
+  }
 .about .items {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
