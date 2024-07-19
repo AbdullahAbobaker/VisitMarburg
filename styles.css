@@ -841,6 +841,11 @@ footer .content p {
     border: 1.6px solid #fff;
 }
 
+.beforeafter .afterbutton {
+    opacity: 0;
+
+}
+
 
 footer .content p i {
     font-size: 36px;
