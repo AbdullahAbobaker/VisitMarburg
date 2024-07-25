@@ -55,7 +55,7 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .nav-bar .site-logo {
@@ -435,7 +435,7 @@ section .heading .subtitle {
 
 .slider {
     height: 100vh;
-    margin-top: -20px;
+    margin-top: 50px;
     position: relative;
 }
 
