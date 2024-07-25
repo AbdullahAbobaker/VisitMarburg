@@ -47,7 +47,11 @@
         <a href="/Gallery/Gallery.html">Nature</a>
       </li>
       <li class="link">
+        <a href="/comments.html">Impressions</a>
+      </li>
+      <li class="link">
         <a href="ContactFrom/contact.html">Contact</a>
+    
       </li>
     </ul>
   </div>
@@ -384,206 +388,52 @@
     </div>
 
   </div>
-  <section class="residents-experiences" id="residents-experiences">
+  
+
+
+
+
+
+    <section class="beforeafter">
     <div class="heading">
-      <h1 class="title">Erlebnisse von Marburger Bewohnern</h1>
-      <p class="subtitle">Empfehlungen von Einheimischen für Touristen</p>
-    </div>
-    <div class="content">
-      <!-- Beste drei Kommentare -->
-      <div class="best-comments">
-        <div class="comment">
-          <p>
-            "Marburg ist ein Muss für alle Geschichtsliebhaber. Die Altstadt ist wie ein Schritt zurück in die Zeit." - Anna M.
-          </p>
-        </div>
-        <div class="comment">
-          <p>
-            "Besucht unbedingt die Elisabethkirche und genießt ein Picknick im Schlosspark." - Markus T.
-          </p>
-        </div>
-        <div class="comment">
-          <p>
-            "Die Spiegelslustturm bietet eine atemberaubende Aussicht über die ganze Stadt. Ein Erlebnis, das man nicht verpassen sollte." - Katharina S.
-          </p>
-        </div>
-      </div>
-      <!-- Formular für neue Kommentare -->
-      <div class="new-comment-form">
-        <h2>Füge deine Empfehlung hinzu</h2>
-        <form id="resident-experience-form">
-          <div class="form-group">
-            <label for="resident-name">Name:</label>
-            <input type="text" id="resident-name" name="resident-name" required>
-          </div>
-          <div class="form-group">
-            <label for="resident-experience">Erlebnis:</label>
-            <textarea id="resident-experience" name="resident-experience" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Erfahrung teilen</button>
-        </form>
-        <div class="all-comments">
-          <!-- Button zum Anzeigen der Kommentare -->
-          <button class="comment-button" onclick="openModal()">Zeige alle Empfehlungen</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal zum Anzeigen der Kommentare -->
-  <div id="commentModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="commentSection">
-        <!-- Hier werden die Kommentare der Bewohner angezeigt -->
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('resident-experience-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = document.getElementById('resident-name').value;
-      const experience = document.getElementById('resident-experience').value;
-
-      const commentSection = document.getElementById('commentSection');
-      const newComment = document.createElement('div');
-      newComment.classList.add('comment');
-      newComment.innerHTML = `<p><strong>${name}</strong>: ${experience}</p>`;
-
-      commentSection.appendChild(newComment);
-
-      document.getElementById('resident-experience-form').reset();
-    });
-
-    function openModal() {
-      document.getElementById('commentModal').style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById('commentModal').style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      if (event.target == document.getElementById('commentModal')) {
-        closeModal();
-      }
-    }
-  </script>
-
-  <section class="tourists-experiences" id="tourists-experiences">
-    <div class="heading">
-      <h1 class="title">Erlebnisse von Touristen</h1>
-      <p class="subtitle">Teile deine Erfahrungen in Marburg</p>
-    </div>
-    <div class="content">
-      <!-- Formular für neue Kommentare -->
-      <div class="new-comment-form">
-        <h2>Füge deine Erfahrung hinzu</h2>
-        <form id="tourist-experience-form">
-          <div class="form-group">
-            <label for="tourist-name">Name:</label>
-            <input type="text" id="tourist-name" name="tourist-name" required>
-          </div>
-          <div class="form-group">
-            <label for="tourist-experience">Erlebnis:</label>
-            <textarea id="tourist-experience" name="tourist-experience" rows="4" required></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Erfahrung teilen</button>
-        </form>
-        <div class="all-comments">
-          <!-- Button zum Anzeigen der Kommentare -->
-          <button class="comment-button" onclick="openTouristModal()">Zeige alle Erfahrungen</button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Modal zum Anzeigen der Kommentare von Touristen -->
-  <div id="touristModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeTouristModal()">&times;</span>
-      <div id="touristCommentSection">
-        <!-- Hier werden die Kommentare der Touristen angezeigt -->
-      </div>
-    </div>
-  </div>
-
-  <script>
-    document.getElementById('tourist-experience-form').addEventListener('submit', function(event) {
-      event.preventDefault();
-      const name = document.getElementById('tourist-name').value;
-      const experience = document.getElementById('tourist-experience').value;
-
-      const commentSection = document.getElementById('touristCommentSection');
-      const newComment = document.createElement('div');
-      newComment.classList.add('comment');
-      newComment.innerHTML = `<p><strong>${name}</strong>: ${experience}</p>`;
-
-      commentSection.appendChild(newComment);
-
-      document.getElementById('tourist-experience-form').reset();
-    });
-
-    function openTouristModal() {
-      document.getElementById('touristModal').style.display = "block";
-    }
-
-    function closeTouristModal() {
-      document.getElementById('touristModal').style.display = "none";
-    }
-
-    window.onclick = function(event) {
-      if (event.target == document.getElementById('touristModal')) {
-        closeTouristModal();
-      }
-    }
-  </script>
-
-
-
-
-
-  <section class="beforeafter">
-  <div class="heading">
-    <h1 class="title">Before & After</h1>
-    <style>
-      .beforeafter {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .afterbutton {
-        position: relative;
-        top: 50px;
-        margin-top: 20px;
-      }
-      .btn-explore2 {
-        width: fit-content;
-       background-color: #f35305;
-    padding: 0.9rem 2.4rem;
-    padding-left: 1rem;
-    font-size: 16px;
-    line-height: 16px;
-    color: white;
-    border: 2px solid #f35305cc;
-    margin-top: 2rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    gap:1rem;
-    transition: all 1s;
-      }
-      .btn-explore2:hover {
-    border: 2px solid #f35305;
-    background-color: #f35305;
-    padding-left: 2rem;
-}   
-    </style>
-    <p class="subtitle">Explore the transformation of Marburg over the years</p>
-  </div class ="afterbutton">
-  <a href="/afterbeforeintro.html">
+      <h1 class="title">Before & After</h1>
+      <style>
+        .beforeafter {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .afterbutton {
+          position: relative;
+          top: 50px;
+          margin-top: 20px;
+        }
+        .btn-explore2 {
+          width: fit-content;
+        background-color: #f35305;
+      padding: 0.9rem 2.4rem;
+      padding-left: 1rem;
+      font-size: 16px;
+      line-height: 16px;
+      color: white;
+      border: 2px solid #f35305cc;
+      margin-top: 2rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap:1rem;
+      transition: all 1s;
+        }
+        .btn-explore2:hover {
+      border: 2px solid #f35305;
+      background-color: #f35305;
+      padding-left: 2rem;
+  }   
+      </style>
+      <p class="subtitle">Explore the transformation of Marburg over the years</p>
+    </div class ="afterbutton">
+    <a href="/afterbeforeintro.html">
     <button class="btn-explore2">Click me</button>
   </a>
 </section>

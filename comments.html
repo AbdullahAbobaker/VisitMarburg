@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Visit Marburg</title>
+
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://kit.fontawesome.com/c5d70d7fb0.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css"
+    />
+    <link rel="stylesheet" href="normalize.css" />
+    <script src="https://unpkg.com/scrollreveal@4.0.9/dist/scrollreveal.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="commentStyles.css" />
+
+    <script>
+      $(document).ready(function () {
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $(".nav-bar").outerHeight();
+
+        $(window).scroll(function (event) {
+          var st = $(this).scrollTop();
+          if (st > lastScrollTop && st > navbarHeight) {
+            $(".nav-bar").addClass("hidden");
+          } else {
+            if (st + $(window).height() < $(document).height()) {
+              $(".nav-bar").removeClass("hidden");
+            }
+          }
+          lastScrollTop = st;
+        });
+      });
+
+      async function loadComments() {
+        const response = await fetch("http://127.0.0.1:5000/comments");
+        const comments = await response.json();
+        const commentSection = document.getElementById("commentSection");
+        commentSection.innerHTML = comments
+          .map(
+            (c) =>
+              `<div class="comment"><p><strong>${c.name}</strong>: ${c.experience}<br><br><small>${c.timestamp}</small></p></div>`
+          )
+          .join("");
+      }
+
+      async function submitComment(event) {
+        event.preventDefault();
+        const name = document.getElementById("resident-name").value;
+        const experience = document.getElementById("resident-experience").value;
+
+        await fetch("http://127.0.0.1:5000/comments", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, experience }),
+        });
+
+        document.getElementById("resident-experience-form").reset();
+        closeModal();
+        loadComments();
+      }
+
+      async function clearAllComments() {
+        await fetch("http://127.0.0.1:5000/comments", {
+          method: "DELETE",
+        });
+        loadComments();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        document
+          .getElementById("resident-experience-form")
+          .addEventListener("submit", submitComment);
+        loadComments();
+      });
+
+      function openFormModal() {
+        document.getElementById("formModal").style.display = "block";
+      }
+
+      function closeFormModal() {
+        document.getElementById("formModal").style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("formModal")) {
+          closeFormModal();
+        }
+      };
+
+      function openCommentModal() {
+        document.getElementById("commentModal").style.display = "block";
+      }
+
+      function closeCommentModal() {
+        document.getElementById("commentModal").style.display = "none";
+      }
+
+      window.onclick = function (event) {
+        if (event.target == document.getElementById("commentModal")) {
+          closeCommentModal();
+        }
+      };
+    </script>
+  </head>
+  <body>
+    <nav class="nav-bar">
+      <div class="content">
+        <div class="site-logo">
+          <a href="#" class="logo-link">Visit Marburg</a>
+        </div>
+        <ul class="navigation">
+          <li class="link"><a href="#home">Home</a></li>
+          <li class="link"><a href="/quiz/index.html">Quiz</a></li>
+          <li class="link"><a href="/Team/team.html">Team</a></li>
+          <li class="link">
+            <a href="/Gallery/Gallery.html">Nature</a>
+          </li>
+          <li class="link">
+            <a href="ContactFrom/contact.html">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <section class="residents-experiences" id="residents-experiences">
+      <div class="heading">
+        <h1 class="title">Erlebnisse von Marburger Bewohnern</h1>
+        <p class="subtitle">Erlebnisse von Einheimischen für Touristen</p>
+      </div>
+      <div class="content">
+        <!-- Beste drei Kommentare -->
+        <div class="best-comments" id="commentSection">
+          <div class="comment">
+            <p>
+              "Marburg ist ein Muss für alle Geschichtsliebhaber. Die Altstadt
+              ist wie ein Schritt zurück in die Zeit." - Anna M.
+            </p>
+          </div>
+          <div class="comment">
+            <p>
+              "Besucht unbedingt die Elisabethkirche und genießt ein Picknick im
+              Schlosspark." - Markus T.
+            </p>
+          </div>
+          <div class="comment">
+            <p>
+              "Die Spiegelslustturm bietet eine atemberaubende Aussicht über die
+              ganze Stadt. Ein Erlebnis, das man nicht verpassen sollte." -
+              Katharina S.
+            </p>
+          </div>
+        </div>
+        <div class="all-comments">
+          <!-- Button to clear all comments -->
+          <button class="comment-button" onclick="clearAllComments()">
+            Alle Kommentare löschen
+          </button>
+          <!-- Button to open the form modal -->
+          <button class="comment-button" onclick="openFormModal()">
+            Füge dein Erlebnis hinzu
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for displaying comments -->
+    <div id="commentModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeCommentModal()">&times;</span>
+        <div id="commentSection">
+          <!-- Comments will be displayed here -->
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for submitting a new comment -->
+    <div id="formModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeFormModal()">&times;</span>
+        <h2>Füge dein Erlebnis hinzu</h2>
+        <form id="resident-experience-form">
+          <div class="form-group">
+            <label for="resident-name">Name:</label>
+            <input
+              type="text"
+              id="resident-name"
+              name="resident-name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="resident-experience">Erlebnis:</label>
+            <textarea
+              id="resident-experience"
+              name="resident-experience"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" class="btn-submit">Erfahrung teilen</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
