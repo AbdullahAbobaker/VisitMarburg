@@ -134,8 +134,8 @@
 
     <section class="residents-experiences" id="residents-experiences">
       <div class="heading">
-        <h1 class="title">Erlebnisse von Marburger Bewohnern</h1>
-        <p class="subtitle">Erlebnisse von Einheimischen für Touristen</p>
+        <h1 class="title">Experiences of Marburg residents</h1>
+        <p class="subtitle">Recommendations from locals for tourists</p>
       </div>
       <div class="content">
         <!-- Beste drei Kommentare -->
@@ -163,11 +163,11 @@
         <div class="all-comments">
           <!-- Button to clear all comments -->
           <button class="comment-button" onclick="clearAllComments()">
-            Alle Kommentare löschen
+            Delete all comments
           </button>
           <!-- Button to open the form modal -->
           <button class="comment-button" onclick="openFormModal()">
-            Füge dein Erlebnis hinzu
+            Add your experience
           </button>
         </div>
       </div>
@@ -187,7 +187,7 @@
     <div id="formModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeFormModal()">&times;</span>
-        <h2>Füge dein Erlebnis hinzu</h2>
+        <h2>Add your experience</h2>
         <form id="resident-experience-form">
           <div class="form-group">
             <label for="resident-name">Name:</label>
@@ -199,7 +199,7 @@
             />
           </div>
           <div class="form-group">
-            <label for="resident-experience">Erlebnis:</label>
+            <label for="resident-experience">Experience:</label>
             <textarea
               id="resident-experience"
               name="resident-experience"
@@ -207,7 +207,7 @@
               required
             ></textarea>
           </div>
-          <button type="submit" class="btn-submit">Erfahrung teilen</button>
+          <button type="submit" class="btn-submit">Share experience</button>
         </form>
       </div>
     </div>
